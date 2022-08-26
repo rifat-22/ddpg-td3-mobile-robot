@@ -4,43 +4,25 @@ Deep Reinforcement Learning for mobile robot navigation in ROS Gazebo simulator.
 
 Training example:
 <p align="center">
-    <img width=100% src="https://github.com/reiniscimurs/DRL-robot-navigation/blob/main/training.gif">
+    <img width=100% src="https://github.com/rifat-22/ddpg-td3-mobile-robot/blob/main/traintd3.gif">
 </p>
-
-
-**The implementation of this method has been accepted and published in IEEE RA-L:**
-
-Some more information about the implementation is available [here](https://ieeexplore.ieee.org/document/9645287?source=authoralert)
-
-Please cite as:<br/>
-```
-@ARTICLE{9645287,
-  author={Cimurs, Reinis and Suh, Il Hong and Lee, Jin Han},
-  journal={IEEE Robotics and Automation Letters}, 
-  title={Goal-Driven Autonomous Exploration Through Deep Reinforcement Learning}, 
-  year={2022},
-  volume={7},
-  number={2},
-  pages={730-737},
-  doi={10.1109/LRA.2021.3133591}}
-```
 
 Main dependencies: 
 
-* [ROS Melodic](http://wiki.ros.org/melodic/Installation)
+* [ROS Noetic](http://wiki.ros.org/melodic/Installation)
 * [PyTorch](https://pytorch.org/get-started/locally/)
 
 Clone the repository:
 ```shell
 $ cd ~
 ### Clone this repo
-$ git clone https://github.com/reiniscimurs/DRL-robot-navigation
+$ git clone https://github.com/rifat-22/ddpg-td3-mobile-robot.git
 ```
 The network can be run with a standard 2D laser, but this implementation uses a simulated [3D Velodyne sensor](https://github.com/lmark1/velodyne_simulator)
 
 Compile the workspace:
 ```shell
-$ cd ~/DRL-robot-navigation/catkin_ws
+$ cd ~/ddpg-td3-mobile-robot/catkin_ws
 ### Compile
 $ catkin_make_isolated
 ```
@@ -52,25 +34,14 @@ $ export ROS_MASTER_URI=http://localhost:11311
 $ export ROS_PORT_SIM=11311
 $ export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_scenario/launch
 $ source ~/.bashrc
-$ cd ~/DRL-robot-navigation/catkin_ws
+$ cd ~/ddpg-td3-mobile-robot/catkin_ws
 $ source devel_isolated/setup.bash
 ### Run the training
-$ cd ~/DRL-robot-navigation/TD3
+$ cd ~/ddpg-td3-mobile-robot/TD3
 $ python3 velodyne_td3.py
 ```
 
 To kill the training process:
 ```shell
-$ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
+$ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3 rviz
 ```
-
-
-Gazebo environment:
-<p align="center">
-    <img width=80% src="https://github.com/reiniscimurs/DRL-robot-navigation/blob/main/env1.png">
-</p>
-
-Rviz:
-<p align="center">
-    <img width=80% src="https://github.com/reiniscimurs/DRL-robot-navigation/blob/main/velodyne.png">
-</p>
