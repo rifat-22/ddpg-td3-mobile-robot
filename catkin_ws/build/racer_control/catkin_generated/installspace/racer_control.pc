@@ -1,0 +1,8 @@
+prefix=/home/rifat/code/ddpg-td3/DRL-robot-navigation/catkin_ws/install
+
+Name: racer_control
+Description: Description of racer_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/rifat/code/ddpg-td3/DRL-robot-navigation/catkin_ws/devel/.private/racer_world/setup.sh

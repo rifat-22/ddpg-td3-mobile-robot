@@ -1,6 +1,5 @@
 # DRL-robot-navigation
 
-
 Deep Reinforcement Learning for mobile robot navigation in ROS Gazebo simulator. Using Twin Delayed Deep Deterministic Policy Gradient (TD3) neural network, a robot learns to navigate to a random goal point in a simulated environment while avoiding obstacles. Obstacles are detected by laser readings and a goal is given to the robot in polar coordinates. Trained in ROS Gazebo simulator with PyTorch.  Tested with ROS Noetic on Ubuntu 20.04 with python 3.8.10 and pytorch 1.10.
 
 Training example:
@@ -9,9 +8,7 @@ Training example:
 </p>
 
 
-
-**The implementation of this method has been accepted for ICRA 2022 and published in IEEE RA-L:**
-
+**The implementation of this method has been accepted and published in IEEE RA-L:**
 
 Some more information about the implementation is available [here](https://ieeexplore.ieee.org/document/9645287?source=authoralert)
 
@@ -30,9 +27,8 @@ Please cite as:<br/>
 
 Main dependencies: 
 
-* [ROS Noetic](http://wiki.ros.org/noetic/Installation)
+* [ROS Melodic](http://wiki.ros.org/melodic/Installation)
 * [PyTorch](https://pytorch.org/get-started/locally/)
-* [Tensorboard](https://github.com/tensorflow/tensorboard)
 
 Clone the repository:
 ```shell
@@ -58,18 +54,9 @@ $ export GAZEBO_RESOURCE_PATH=~/DRL-robot-navigation/catkin_ws/src/multi_robot_s
 $ source ~/.bashrc
 $ cd ~/DRL-robot-navigation/catkin_ws
 $ source devel_isolated/setup.bash
-```
-
-Run the training:
-```shell
+### Run the training
 $ cd ~/DRL-robot-navigation/TD3
-$ python3 train_velodyne_td3.py
-```
-
-To check the training process on tensorboard:
-```shell
-$ cd ~/DRL-robot-navigation/TD3
-$ tensorboard --logdir runs
+$ python3 velodyne_td3.py
 ```
 
 To kill the training process:
@@ -77,11 +64,6 @@ To kill the training process:
 $ killall -9 rosout roslaunch rosmaster gzserver nodelet robot_state_publisher gzclient python python3
 ```
 
-Once training is completed, test the model:
-```shell
-$ cd ~/DRL-robot-navigation/TD3
-$ python3 test_velodyne_td3.py
-```
 
 Gazebo environment:
 <p align="center">
