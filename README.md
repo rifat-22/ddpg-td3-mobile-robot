@@ -9,7 +9,7 @@ Training example:
 
 Main dependencies: 
 
-* [ROS Noetic](http://wiki.ros.org/melodic/Installation)
+* [ROS Noetic](http://wiki.ros.org/noetic/Installation)
 * [PyTorch](https://pytorch.org/get-started/locally/)
 
 Clone the repository:
